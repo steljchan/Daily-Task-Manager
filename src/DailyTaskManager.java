@@ -72,7 +72,7 @@ public class DailyTaskManager {
 
                 default -> System.out.println(Colors.RED + "Invalid choice. Try again." + Colors.RESET);
             }
-        } while (choice != 10);
+        } while (choice != 11);
     }
 
     static void displayCatArt2() {
