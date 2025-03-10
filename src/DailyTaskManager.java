@@ -163,7 +163,7 @@ public class DailyTaskManager {
         if (daysLeft < 0) return Colors.RED + "(Terlambat)" + Colors.RESET;
         if (daysLeft == 0 || daysLeft == 1) return Colors.ORANGE + "(Hampir Tenggat)" + Colors.RESET;
         if (daysLeft <= 3) return Colors.YELLOW + "(Segera)" + Colors.RESET;
-        return Colors.GREEN + "(Tepat Waktu)" + Colors.RESET;
+        return Colors.GREEN + "(Masih banyak waktu)" + Colors.RESET;
     }
 
     static void displayTaskArray() {
@@ -305,7 +305,9 @@ public class DailyTaskManager {
         System.out.println(Colors.BG_BLUE + "\nDynamic Task List:" + Colors.RESET);
         while (temp != null) {
             System.out.println(Colors.GREEN + temp.task + " | Deadline: " 
-                + temp.deadline + " | Priority: " + temp.priority + Colors.RESET);
+            + temp.deadline + " " + getDeadlineStatus(temp.deadline)
+            + " | Priority: " + temp.priority + Colors.RESET);
+
             temp = temp.next;
         }
         
